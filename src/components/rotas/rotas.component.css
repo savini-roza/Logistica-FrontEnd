@@ -1,0 +1,18 @@
+.rota {
+    margin-top: 30px;
+}
+
+.custom-header {
+  background-color: #80f298;
+}
+
+.title-endereco {
+    display: inline;
+    margin-right: 50px;
+}
+
+.abrir-mapa {
+  background-color: #80f298;
+  border: 1px solid #808080;
+  border-radius: 5px;
+}

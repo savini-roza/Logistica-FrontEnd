@@ -1,0 +1,90 @@
+<div class="transporte">
+  <!--<div class="menu">
+    <a>Verificar Rota</a>
+    <a>Manutenção</a>
+  </div>-->
+  <div class="frota">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <label>Status</label>
+          <form class="status">
+            <fieldset id="status">
+              <input name="status" type="radio" />
+              <label>Livre</label>
+              <br />
+              <input name="status" type="radio" />
+              <label>Oficina</label>
+              <br />
+              <input name="status" type="radio" />
+              <label>Bloqueado</label>
+              <br />
+            </fieldset>
+            <div class="text-center">
+              <button class="btn-filtrar">Filtrar</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <div class="col-5">
+              <label class="label-padrao">Código</label>
+              <input class="input-padrao" type="text" />
+            </div>
+            <div class="col-7">
+              <label class="label-padrao">Veículo</label>
+              <input class="input-padrao input-lg" type="text" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5">
+              <label class="label-padrao">Placa</label>
+              <input class="input-padrao" type="text" />
+            </div>
+            <div class="col-7">
+              <label class="label-padrao">Modelo</label>
+              <input class="input-padrao input-lg" type="text" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <label class="label-padrao">Capacidade Max (kg)</label>
+              <input class="input-padrao input-lg" type="text" />
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <label class="label-padrao">Foto Veículo</label>
+          <img class="img-veiculo" src="../../assets/img/foto-caminhao.jpg" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <table class="table-veiculos">
+            <thead>
+              <tr>
+                <td width="20%">Código</td>
+                <td width="20%">Veículo</td>
+                <td width="20%">Placa</td>
+                <td width="70%">Status</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="radio" />1551</td>
+                <td>GRT9638</td>
+                <td>GRT9638</td>
+                <td>Livre</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="text-center">
+            <button class="btn-filtrar selecionar">Selecionar Veículo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

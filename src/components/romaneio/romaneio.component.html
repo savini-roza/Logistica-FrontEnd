@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">&nbsp;</div>
+    <div class="col-9">
+      <label>Romaneio&nbsp;&nbsp;</label>
+      <input type="text" />&nbsp;&nbsp;&nbsp;
+      <button class="btn-recalcular">Recalcular Rota</button>
+    </div>
+  </div>
+
+  <div class="row menu-romaneio">
+    <nav class="nav nav-pills nav-fill">
+      <a class="nav-item nav-link nav-custom" (click)="ativarNotaFiscal()" [ngClass]="{'custom-active': notafiscal}">Nota Fiscal</a>
+      <a class="nav-item nav-link nav-custom" (click)="ativarTransporte()" [ngClass]="{'custom-active': transporte}">Transporte</a>
+      <a class="nav-item nav-link nav-custom" (click)="ativarRota()" [ngClass]="{'custom-active': rota}">Rota</a>
+    </nav>
+  </div>
+
+  <div class="row">
+    <div class="conteudo-romaneio">
+      <app-importacao-notas *ngIf="notafiscal"></app-importacao-notas>
+      <app-transporte *ngIf="transporte"></app-transporte>
+      <app-rotas *ngIf="rota"></app-rotas>
+    </div>
+  </div>
+</div>

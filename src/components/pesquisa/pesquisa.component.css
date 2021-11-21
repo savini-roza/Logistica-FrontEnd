@@ -1,0 +1,26 @@
+.img-pesquisa {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.categoria {
+    line-height: 3.4;
+}
+
+.label-sugestao {
+    display: block;
+}
+
+.btn-enviar {
+  background-color: #80f298;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+

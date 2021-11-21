@@ -1,0 +1,59 @@
+.rastreio {
+  border: 1px solid #cacaca;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.label-padrao {
+    display: block;
+}
+
+.input-padrao {
+  width: 120px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid #808080;
+}
+
+textarea {
+  width: 100%;
+}
+
+.tip {
+    font-size: 11px;
+    display: inline;
+    margin-left: 10px;
+}
+
+table, tr, td {
+    border: 1px solid black;
+}
+
+table {
+  width: 100%;
+}
+
+.btn-sim {
+  background-color: #80f298;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 1px 20px;
+}
+
+.btn-nao {
+  background-color: #e65b5b;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 1px 20px;
+}
+
+.btn-salvar {
+  background-color: #8af8e8;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 1px 20px;
+}
+
+.custom-card {
+    padding: 10px;
+}

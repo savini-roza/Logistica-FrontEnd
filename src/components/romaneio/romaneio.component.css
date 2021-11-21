@@ -1,0 +1,25 @@
+.btn-recalcular {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #f86422;
+  padding: 3px 15px;
+  margin-bottom: 5px;
+}
+
+.custom-active {
+  background-color: #80f298 !important;
+}
+
+.nav-custom {
+    color: black;
+    background-color: #cecece;
+}
+
+.menu-romaneio {
+    margin-top: 30px;
+}
+
+.conteudo-romaneio {
+  border: 1px solid #cacaca;
+  border-radius: 20px;
+}

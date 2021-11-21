@@ -1,0 +1,50 @@
+.transporte {
+    margin-top: 30px;
+}
+
+.status {
+  border: 1px solid #cacaca;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.btn-filtrar {
+  background-color: #80f298;
+  border: 1px solid #808080;
+  border-radius: 5px;
+}
+
+.input-padrao {
+  width: 100px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid #808080;
+}
+
+.label-padrao {
+    display: block;
+}
+
+.input-lg {
+    width: 150px;
+}
+
+.img-veiculo {
+    width: 150px;
+    height: 150px;
+}
+
+.selecionar {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+table, tr, td {
+    border: 1px solid black;
+}
+
+.table-veiculos {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}

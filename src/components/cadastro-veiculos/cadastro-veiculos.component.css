@@ -1,0 +1,31 @@
+.veiculo {
+  border: 1px solid #cacaca;
+  border-radius: 20px;
+}
+
+.status {
+  border: 1px solid #cacaca;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+
+.img-veiculo {
+  width: 130px;
+  height: 130px;
+}
+
+.label-padrao {
+  display: block;
+}
+
+.input-padrao {
+  width: 120px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid #808080;
+}
+
+textarea {
+    width: 100%;
+}

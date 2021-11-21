@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\components",
+    "\\src\\components\\login",
+    "\\src\\components\\pesquisa",
+    "\\src\\components\\principal",
+    "\\src\\components\\rastreabilidade",
+    "\\src\\components\\romaneio",
+    "\\src\\components\\transporte"
+  ],
+  "SelectedNode": "\\src\\styles.css",
+  "PreviewInSolutionExplorer": false
+}

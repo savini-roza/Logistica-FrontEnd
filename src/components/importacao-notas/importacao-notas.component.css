@@ -1,0 +1,68 @@
+.importacao-notas {
+  margin-top: 30px;
+}
+
+.notas-selecionadas {
+    height: 200px;
+    border: 1px solid black;
+    padding-left: 0px;
+    overflow-y: scroll;
+}
+
+.nota {
+  list-style: none;
+}
+
+label {
+    width: 100px;
+}
+
+.label-bot {
+    display: block;
+    width: 100%;
+}
+
+.input-bot {
+    width: 100px;
+    border-radius: 5px;
+}
+
+.dest {
+  width: 200px;
+}
+
+.input-padrao {
+    width: 100px;
+}
+
+input {
+    margin-bottom: 5px;
+}
+
+.btn-importar {
+    background-color: #80e07f;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 10px;
+    float: right;
+}
+
+.line {
+    margin-top: 10px;
+    height: 5px;
+}
+
+.btn-remover {
+  background-color: #e65b5b;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.custom-card {
+    background-color: #e8e8e8;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,55 @@
+.nota {
+  padding: 10px;
+}
+
+input {
+    margin-bottom: 5px;
+    width: 50%;
+}
+
+.custom-card-dk {
+    background-color: #d8d8d8;
+}
+
+.btn-pesquisa {
+    border: 1px solid #808080;
+    border-radius: 5px;
+    background-color: #fbd364;
+    padding: 1px 10px;
+}
+
+.label-padrao {
+    width: 120px;
+}
+
+.info {
+    border: 1px solid #808080;
+    padding: 10px;
+}
+
+.btn-importar {
+  background-color: #80e07f;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 10px;
+  float: right;
+}
+
+.btn-entrada {
+  background-color: #61be5a;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+table, tr, td {
+    border: 1px solid black;
+}
+
+thead {
+    background-color: #d5d5d5;
+}
+
+td {
+    padding: 5px;
+}

@@ -1,0 +1,41 @@
+<div class="pesquisa">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <p>Olá, Sr. Pedro</p>
+        <p>Sobre o seu pedido Nota Fiscal 22151</p>
+      </div>
+      <div class="col-6">
+        <img class="img-pesquisa" src="../../assets/img/survey.png" />
+      </div>
+      <div class="col-12">
+        <p>Compartilhe com a gente o que você acha do nosso trabalho e como podemos melhorar</p>
+      </div>
+      <div class="col-6">
+        <p class="categoria">Atendimento do Entregador</p>
+      </div>
+      <div class="col-6">
+        <star-rating [value]="5" [totalstars]="5" checkedcolor="orange" uncheckedcolor="black" size="24px" [readonly]="false" (rate)="onRate($event)"></star-rating>
+      </div>
+      <div class="col-6">
+        <p class="categoria">Tempo de Entrega</p>
+      </div>
+      <div class="col-6">
+        <star-rating [value]="5" [totalstars]="5" checkedcolor="orange" uncheckedcolor="black" size="24px" [readonly]="false" (rate)="onRate($event)"></star-rating>
+      </div>
+      <div class="col-6">
+        <p class="categoria">Atendimento dos Vendedores</p>
+      </div>
+      <div class="col-6">
+        <star-rating [value]="5" [totalstars]="5" checkedcolor="orange" uncheckedcolor="black" size="24px" [readonly]="false" (rate)="onRate($event)"></star-rating>
+      </div>
+      <div class="col-12">
+        <label class="label-sugestao">Deixe aqui sua sugetão ou crítica</label>
+        <textarea></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button class="btn-enviar">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
