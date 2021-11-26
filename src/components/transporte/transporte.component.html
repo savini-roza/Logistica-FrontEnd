@@ -10,18 +10,18 @@
           <label>Status</label>
           <form class="status">
             <fieldset id="status">
-              <input name="status" type="radio" />
+              <input (click)="checkL()" name="status" type="radio" />
               <label>Livre</label>
               <br />
-              <input name="status" type="radio" />
+              <input (click)="checkO()"  name="status" type="radio" />
               <label>Oficina</label>
               <br />
-              <input name="status" type="radio" />
+              <input (click)="checkB()"  name="status" type="radio" />
               <label>Bloqueado</label>
               <br />
             </fieldset>
             <div class="text-center">
-              <button class="btn-filtrar">Filtrar</button>
+              <button (click)="filtrarStatus()" class="btn-filtrar">Filtrar</button>
             </div>
           </form>
         </div>
@@ -29,27 +29,27 @@
           <div class="row">
             <div class="col-5">
               <label class="label-padrao">Código</label>
-              <input class="input-padrao" type="text" />
+              <input disabled [ngModel]="veiculoSelecionado.id" class="input-padrao" type="text" />
             </div>
             <div class="col-7">
               <label class="label-padrao">Veículo</label>
-              <input class="input-padrao input-lg" type="text" />
+              <input disabled [ngModel]="veiculoSelecionado.modelo" class="input-padrao input-lg" type="text" />
             </div>
           </div>
           <div class="row">
             <div class="col-5">
               <label class="label-padrao">Placa</label>
-              <input class="input-padrao" type="text" />
+              <input disabled [ngModel]="veiculoSelecionado.placa" class="input-padrao" type="text" />
             </div>
-            <div class="col-7">
+            <!--<div class="col-7">
               <label class="label-padrao">Modelo</label>
               <input class="input-padrao input-lg" type="text" />
-            </div>
+            </div>-->
           </div>
           <div class="row">
             <div class="col-7">
               <label class="label-padrao">Capacidade Max (kg)</label>
-              <input class="input-padrao input-lg" type="text" />
+              <input disabled [ngModel]="veiculoSelecionado.capacidadeMax" class="input-padrao input-lg" type="text" />
             </div>
           </div>
         </div>
@@ -71,17 +71,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><input type="radio" />1551</td>
-                <td>GRT9638</td>
-                <td>GRT9638</td>
-                <td>Livre</td>
+              <tr *ngFor="let veiculo of listaVeiculos; let i = index">
+                <td><input name="selecionado" type="radio" [checked]="veiculo.id == veiculoSelecionado.id" (click)="selecionar(i)" />{{veiculo.id}}</td>
+                <td>{{veiculo.modelo}}</td>
+                <td>{{veiculo.placa}}</td>
+                <td><span *ngIf="veiculo.disponivel">Livre</span><span *ngIf="!veiculo.disponivel">Bloqueado</span></td>
               </tr>
             </tbody>
           </table>
 
           <div class="text-center">
-            <button class="btn-filtrar selecionar">Selecionar Veículo</button>
+            <button (click)="selecionarPRomaneio()" class="btn-filtrar selecionar">Selecionar Veículo</button>
           </div>
         </div>
       </div>

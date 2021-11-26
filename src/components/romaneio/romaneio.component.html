@@ -4,7 +4,7 @@
     <div class="col-9">
       <label>Romaneio&nbsp;&nbsp;</label>
       <input type="text" />&nbsp;&nbsp;&nbsp;
-      <button class="btn-recalcular">Recalcular Rota</button>
+      <button (click)="recalcular()" class="btn-recalcular">Recalcular Rota</button>
     </div>
   </div>
 
@@ -21,6 +21,12 @@
       <app-importacao-notas *ngIf="notafiscal"></app-importacao-notas>
       <app-transporte *ngIf="transporte"></app-transporte>
       <app-rotas *ngIf="rota"></app-rotas>
+    </div>
+  </div>
+  <br /><br />
+  <div class="row">
+    <div class="col-12 text-center">
+      <div (click)="gerarRomaneio()" class="btn-recalcular">Gerar Romaneio</div>
     </div>
   </div>
 </div>

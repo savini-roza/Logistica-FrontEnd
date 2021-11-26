@@ -1,5 +1,8 @@
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { TranslateLoader, TranslateModule, TranslateService, TranslateStore } from '@ngx-translate/core';
 import { RatingModule } from 'ng-starrating';
 import { CadastroVeiculosComponent } from '../components/cadastro-veiculos/cadastro-veiculos.component';
 import { ImportacaoNotasComponent } from '../components/importacao-notas/importacao-notas.component';
@@ -12,6 +15,8 @@ import { RastreabilidadeComponent } from '../components/rastreabilidade/rastreab
 import { RomaneioComponent } from '../components/romaneio/romaneio.component';
 import { RotasComponent } from '../components/rotas/rotas.component';
 import { TransporteComponent } from '../components/transporte/transporte.component';
+import { AlertService } from '../services/alert.service';
+import { LocatorService } from '../services/locator.service';
 
 import { AppComponent } from './app.component';
 
@@ -28,13 +33,22 @@ import { AppComponent } from './app.component';
     RomaneioComponent,
     RotasComponent,
     TransporteComponent,
-    PrincipalComponent
+    PrincipalComponent,
   ],
   imports: [
     BrowserModule,
-    RatingModule
+    RatingModule,
+    HttpClientModule,
+    FormsModule,
+    TranslateModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    LocatorService,
+    HttpClient,
+    AlertService,
+    TranslateService,
+    TranslateStore
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

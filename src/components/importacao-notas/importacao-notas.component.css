@@ -39,6 +39,10 @@ input {
     margin-bottom: 5px;
 }
 
+.selecionada {
+    background-color: #5a6dff;
+}
+
 .btn-importar {
     background-color: #80e07f;
     border: 1px solid #808080;

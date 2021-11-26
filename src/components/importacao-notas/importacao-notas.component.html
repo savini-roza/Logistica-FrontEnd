@@ -5,19 +5,19 @@
         <div class="row">
           <div class="col-12">
             <label>Nota Fiscal</label>
-            <input class="input-padrao" type="text" />
+            <input (ngModel)="novaNota.numero" id="numeroNota" class="input-padrao" type="text" />
           </div>
           <div class="col-12">
             <label>Destinatário</label>
-            <input class="dest" type="text" />
+            <input disabled name="nome" [ngModel]="novoCliente.nome" class="dest" type="text" />
           </div>
           <div class="col-8">
             <label>Cidade</label>
-            <input class="dest" type="text" />
+            <input disabled name="cidade" [ngModel]="novoEndereco.cidade" class="dest" type="text" />
           </div>
           <div class="col-4">
             <label style="width: 60px;">Estado</label>
-            <input style="width: 35%;" type="text" />
+            <input disabled name="estado" [ngModel]="novoEndereco.estado" style="width: 35%;" type="text" />
           </div>
         </div>
       </form>
@@ -28,19 +28,19 @@
           </div>
           <div class="col-6">
             <label>Volume (un)</label>
-            <input class="input-padrao" type="text" />
+            <input disabled [ngModel]="unidades" name="unidades" class="input-padrao" type="text" />
           </div>
           <div class="col-6">
             <label>Volume (m³)</label>
-            <input class="input-padrao" type="text" />
+            <input disabled [ngModel]="volumeTotal" name="volume" class="input-padrao" type="text" />
           </div>
           <div class="col-12">
             <label>Peso (kg)</label>
-            <input class="input-padrao" type="text" />
+            <input disabled [ngModel]="pesoTotal" name="peso" class="input-padrao" type="text" />
           </div>
           <div class="col-12">
             <label>Valor</label>
-            <input class="input-padrao" type="text" />
+            <input disabled [ngModel]="novaNota.valor" name="valor" class="input-padrao" type="text" />
           </div>
         </div>
       </form>
@@ -48,14 +48,12 @@
     <div class="col-3">
       <p class="text-center">Notas Selecionadas</p>
       <ul class="notas-selecionadas text-center" role="listbox">
-        <li class="nota">423423</li>
-        <li class="nota">423423</li>
-        <li class="nota">423423</li>
+        <li [ngClass]="{'selecionada': nota == notaSelecionada}" (click)="selectNota(i)" *ngFor="let nota of notas; let i = index" class="nota">{{nota.numero}}</li>
       </ul>
     </div>
     <div class="row">
       <div class="col-6">
-        <button class="btn-importar">
+        <button (click)="importarNota()" class="btn-importar">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
             <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
             <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
@@ -63,7 +61,7 @@
         </button>
       </div>
       <div class="col-6">
-        <button class="btn-remover">
+        <button (click)="removerNota()" class="btn-remover">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
             <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
             <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
@@ -78,19 +76,19 @@
       <div class="row">
         <div class="col-3">
           <label class="label-bot">Volume Carga(m³)</label>
-          <input class="input-bot" type="text" />
+          <input disabled [ngModel]="volumeTotal" name="vTotal" class="input-bot" type="text" />
         </div>
         <div class="col-3">
           <label class="label-bot">Capacidade Max(m³)</label>
-          <input class="input-bot" type="text" />
+          <input disabled [ngModel]="veiculo.capacidadeMax" name="cMax" class="input-bot" type="text" />
         </div>
         <div class="col-3">
           <label class="label-bot">Peso Carga</label>
-          <input class="input-bot" type="text" />
+          <input disabled [ngModel]="pesoTotal" class="input-bot" name="pTotal" type="text" />
         </div>
         <div class="col-3">
           <label class="label-bot">Peso Max</label>
-          <input class="input-bot" type="text" />
+          <input disabled [ngModel]="veiculo.volumeMax" name="pmax" class="input-bot" type="text" />
         </div>
       </div>
     </div>

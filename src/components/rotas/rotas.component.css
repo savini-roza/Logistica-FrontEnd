@@ -16,3 +16,12 @@
   border: 1px solid #808080;
   border-radius: 5px;
 }
+
+.lista-enderecos {
+    padding-left: 0px;
+    list-style: none;
+}
+
+iframe {
+    margin: 10px;
+}

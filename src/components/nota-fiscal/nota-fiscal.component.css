@@ -21,6 +21,9 @@ input {
 .label-padrao {
     width: 120px;
 }
+.label-modal {
+    width: 90px;
+}
 
 .info {
     border: 1px solid #808080;
