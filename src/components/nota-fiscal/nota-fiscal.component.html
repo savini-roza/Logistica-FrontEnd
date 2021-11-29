@@ -1,52 +1,52 @@
 <div class="nota">
-  <div class="container">
-    <div class="custom-card-dk">
-      <p class="title">Consultar Nota Fiscal</p>
-      <div class="row">
-        <div class="col-4">
-          <label>N°&nbsp;</label>
-          <input id="nNotaFiscalPesquisa" type="text" />
-        </div>
-        <div class="col-4">
-          <button class="btn-pesquisa" (click)="buscarNota()">
+    <div class="container">
+        <div class="custom-card-dk">
+            <p class="title">Consultar Nota Fiscal</p>
+            <div class="row">
+                <div class="col-4">
+                    <label>N°&nbsp;</label>
+                    <input id="nNotaFiscalPesquisa" type="text" />
+                </div>
+                <div class="col-4">
+                    <button class="btn-pesquisa" (click)="buscarNota()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
             </svg>Pesquisar Nota Fiscal
           </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <br /><br />
-    <div class="info">
-      <div class="row">
-        <div class="col-12">
-          <p>Informações</p>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <label class="label-padrao">Data de Criação</label>
-            <input disabled [ngModel]="notaSelecionada.dtEmissao | date: 'dd/MM/yyyy'" ng-disabled="" type="text" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <label class="label-padrao">Nota Fiscal</label>
-            <input disabled [ngModel]="notaSelecionada.numero" type="text" />
-            <a>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <br /><br />
+        <div class="info">
+            <div class="row">
+                <div class="col-12">
+                    <p>Informações</p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label class="label-padrao">Data de Criação</label>
+                        <input disabled [ngModel]="notaSelecionada.dtEmissao | date: 'dd/MM/yyyy'" ng-disabled="" type="text" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <label class="label-padrao">Nota Fiscal</label>
+                        <input disabled [ngModel]="notaSelecionada.numero" type="text" />
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
               </svg>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <label class="label-padrao">Volumes</label>
-            <input disabled [ngModel]="volumes" type="text" />
-          </div>
-        </div>
-        <div class="row">
-          <!--<div class="col-8">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label class="label-padrao">Volumes</label>
+                        <input disabled [ngModel]="volumes" type="text" />
+                    </div>
+                </div>
+                <div class="row">
+                    <!--<div class="col-8">
             <label class="label-padrao">Transportadora</label>
             <input type="text" />
             <a>
@@ -55,15 +55,9 @@
               </svg>
             </a>
           </div>-->
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <label class="label-padrao">Chave de Acesso</label>
-            <input disabled type="text" />
-          </div>
-        </div>
-        <div class="row">
-          <!--<div class="col-6">
+                </div>
+                <div class="row">
+                    <!--<div class="col-6">
             <button (click)="cadastrarNota()" class="btn-importar">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
                 <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
@@ -71,47 +65,47 @@
               </svg>Importar Romaneio
             </button>
           </div>-->
-          <div class="col-6">
-            <button data-toggle="modal" data-target="#modalEntrada" class="btn-entrada">Entrada de Nota Fiscal</button>
-          </div>
+                    <div class="col-6">
+                        <button data-toggle="modal" data-target="#modalEntrada" class="btn-entrada">Entrada de Nota Fiscal</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <br /><br />
+        <div class="row">
+            <div class="col-12">
+                <p>Descrição da Nota</p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Código</td>
+                        <td>Descrição</td>
+                        <td>Quantidade</td>
+                        <td>UM</td>
+                        <td>Código Fiscal</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let produto of produtosNota; let i = index">
+                        <td>{{i}}</td>
+                        <td>{{produto.produtoNota.nome}}</td>
+                        <td>{{produto.produtoNota.quantidade}}</td>
+                        <td>{{produto.produto.unidadeMedida}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <br /><br />
-    <div class="row">
-      <div class="col-12">
-        <p>Descrição da Nota</p>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <td>Código</td>
-            <td>Descrição</td>
-            <td>Quantidade</td>
-            <td>UM</td>
-            <td>Código Fiscal</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let produto of produtosNota; let i = index">
-            <td>{{i}}</td>
-            <td>{{produto.produtoNota.nome}}</td>
-            <td>{{produto.produtoNota.quantidade}}</td>
-            <td>{{produto.produto.unidadeMedida}}</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 </div>
 
 <div class="modal fade" id="modalEntrada" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cadastrar Nota Fiscal</h5>
-        <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cadastrar Nota Fiscal</h5>
+                <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
