@@ -6,6 +6,7 @@ import { AlertService } from '../../services/alert.service';
 import { ProdutoDto } from '../../model/produto-dto';
 import { ProdutoNotaDto } from '../../model/produto-nota-dto';
 import { ProdutoNotaPK } from '../../model/produto-nota-pk';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-nota-fiscal',
@@ -25,10 +26,11 @@ export class NotaFiscalComponent implements OnInit {
   public produtosNaNota: Array<ProdutoDto> = [];
   public produtoNotaAColocar: ProdutoNotaDto = new ProdutoNotaDto;
   public produtoSelecionado: ProdutoDto = new ProdutoDto;
-  public vezes: number = 0;
+  public vezes: Array<ProdutoNotaDto> = [];
+  public novaNota: NotaFiscalDto = new NotaFiscalDto;
 
   ngOnInit(): void {
-    this.vezes = 0;
+    this.vezes = [new ProdutoNotaDto];
     const $api = this.http.get(this.locator.services.Notas, { withCredentials: true });
 
     $api.subscribe((result: any) => {
@@ -42,8 +44,25 @@ export class NotaFiscalComponent implements OnInit {
     });
   }
 
-  cadastrarNota() {
+  adicionarProduto() {
+    this.vezes.push(new ProdutoNotaDto);
+  }
 
+  removerProduto(i: number) {
+    this.vezes.splice(i, 1);
+  }
+
+  cadastrarNota() {
+    this.novaNota.produtos = this.vezes;
+    this.novaNota.moeda = "REAL";
+    let now = new Date;
+    this.novaNota.dtEmissao = formatDate(now, 'dd-MM-yyyyThh:mm:ss.0000-03:00', 'en-US');
+    this.novaNota.dtVencimento = formatDate(now.getDate() + 30, 'dd-MM-yyyyThh:mm:ss.0000-03:00', 'en-US');
+
+    const $api = this.http.post(this.locator.services.Notas, { withCredentials: true });
+
+    $api.subscribe((result: any) => {
+    });
   }
 
   buscarNota() {

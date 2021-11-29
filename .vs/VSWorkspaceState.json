@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
     "\\src\\components",
+    "\\src\\components\\importacao-notas",
     "\\src\\components\\nota-fiscal",
     "\\src\\components\\romaneio",
     "\\src\\components\\rotas",
@@ -11,6 +11,6 @@
     "\\src\\model",
     "\\src\\services"
   ],
-  "SelectedNode": "\\src\\model\\endereco-dto.ts",
+  "SelectedNode": "\\src\\components\\rotas\\rotas.component.ts",
   "PreviewInSolutionExplorer": false
 }

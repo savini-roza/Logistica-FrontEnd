@@ -22,7 +22,7 @@
         </div>
         <div class="card-body">
           <ul class="lista-enderecos">
-            <li *ngFor="let endereco of enderecos">{{endereco.logradouro}}</li>
+            <li *ngFor="let endereco of enderecos; let i = index" (click)="selecionarEndereco(i)">{{endereco.logradouro}}</li>
           </ul>
         </div>
       </div>
@@ -31,9 +31,7 @@
       <button class="abrir-mapa">Abrir o Mapa para acompanhar</button>
       <div class="mapouter">
         <div class="gmap_canvas">
-          <iframe width="300" height="250" id="gmap_canvas" src="'https://maps.google.com/maps?&amp;q=' +
-                  encodeURIComponent({{enderecos[0].logradouro}}) +
-                  '&amp;output=embed'" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
+          <iframe width="400" height="400" id="gmap_canvas" [src]="url" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
         </div>
       </div>
     </div>

@@ -62,7 +62,7 @@ export class RomaneioComponent implements OnInit {
     }
     else {
       let now = new Date();
-      this.novoRomaneio.dataCriacao = formatDate(now, 'dd-MM-yyyyThh:mm:ss.aaaa-03:00', 'en-US');
+      this.novoRomaneio.dataCriacao = formatDate(now, 'dd-MM-yyyyThh:mm:ss.0000-03:00', 'en-US');
       this.novoRomaneio.motorista = this.motoristas[0];
       for (let i = 0; i < this.romaneio.notas.length; i++) {
         this.entregasNota[i] = new EntregaDto;
