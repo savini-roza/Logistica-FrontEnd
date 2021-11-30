@@ -109,88 +109,87 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-12">
-            <label class="label-modal">Número</label>
-            <input [(ngModel)]="novaNota.numero" type="text" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-7">
-            <label class="label-modal">Logradouro</label>
-            <input [(ngModel)]="novaNota.endereco.logradouro" type="text" />
-          </div>
-          <div class="col-5">
-            <label class="label-modal">Número</label>
-            <input [(ngModel)]="novaNota.endereco.numero" type="text" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-7">
-            <label class="label-modal">Cidade</label>
-            <input [(ngModel)]="novaNota.endereco.cidade" type="text" />
-          </div>
-          <div class="col-5">
-            <label class="label-modal">Estado</label>
-            <input [(ngModel)]="novaNota.endereco.estado" type="text" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-7">
-            <label class="label-modal">Cliente</label>
-            <input [(ngModel)]="novaNota.cliente.nome" type="text" />
-          </div>
-          <div class="col-7">
-            <label class="label-modal">Email</label>
-            <input [(ngModel)]="novaNota.cliente.email" type="text" />
-          </div>
-          <div class="col-7">
-            <label class="label-modal">CNPJ</label>
-            <input type="text" data-mask="00.000.000/000-00" [(ngModel)]="novaNota.cliente.cnpj" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <label class="label-modal">Forma de Pagamento</label>
-            <select [(ngModel)]="novaNota.formaPagamento">
-              <option value="CREDITO">Crédito</option>
-              <option value="DINHEIRO">Dinheiro</option>
-              <option value="DEBITO">Débito</option>
-            </select>
-          </div>
-          <div class="col-6">
-            <label class="label-modal">Valor Total</label>
-            <input type="number" [(ngModel)]="novaNota.valor" />
-          </div>
-          <br />
-          <br />
-        </div>
-        <div class="row">
-          <br />
-          <p>Adicionar Produtos</p>
-          <div *ngFor="let vez of vezes; let i = index">
-            <div class="row">
-              <div class="col-6">
-                <label class="label-modal">Produto</label>
-                <select [(ngModel)]="vez.nome" name="nome">
-                  <option value="{{produto.descricao}}" *ngFor="let produto of produtos">{{produto.descricao}}</option>
-                </select>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-12">
+                  <label class="label-modal">Número</label>
+                  <input [(ngModel)]="novaNota.numero" type="text" />
+                </div>
               </div>
-              <div class="col-5">
-                <label class="label-modal">Quantidade</label>
-                <input [(ngModel)]="vez.quantidade" name="qtd" type="number" />
+              <div class="row">
+                <div class="col-7">
+                  <label class="label-modal">Logradouro</label>
+                  <input [(ngModel)]="novaNota.endereco.logradouro" type="text" />
+                </div>
+                <div class="col-5">
+                  <label class="label-modal">Número</label>
+                  <input [(ngModel)]="novaNota.endereco.numero" type="text" />
+                </div>
               </div>
-              <div class="col-1">
-                <a (click)="removerProduto(i)">X</a>
+              <div class="row">
+                <div class="col-7">
+                  <label class="label-modal">Cidade</label>
+                  <input [(ngModel)]="novaNota.endereco.cidade" type="text" />
+                </div>
+                <div class="col-5">
+                  <label class="label-modal">Estado</label>
+                  <input [(ngModel)]="novaNota.endereco.estado" type="text" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-7">
+                  <label class="label-modal">Cliente</label>
+                  <input [(ngModel)]="novaNota.cliente.nome" type="text" />
+                </div>
+                <div class="col-7">
+                  <label class="label-modal">Email</label>
+                  <input [(ngModel)]="novaNota.cliente.email" type="text" />
+                </div>
+                <div class="col-7">
+                  <label class="label-modal">CNPJ</label>
+                  <input type="text" data-mask="00.000.000/000-00" [(ngModel)]="novaNota.cliente.cnpj" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <label class="label-modal">Forma de Pagamento</label>
+                  <select [(ngModel)]="novaNota.formaPagamento">
+                    <option value="CREDITO">Crédito</option>
+                    <option value="DINHEIRO">Dinheiro</option>
+                    <option value="DEBITO">Débito</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  <label class="label-modal">Valor Total</label>
+                  <input type="number" [(ngModel)]="novaNota.valor" />
+                </div>
+              </div>
+              <br />
+              <br />
+              <div class="row">
+                <p>Adicionar Produtos</p>
+                <div *ngFor="let vez of vezes; let i = index">
+                  <div class="row">
+                    <div class="col-6">
+                      <label class="label-modal">Produto</label>
+                      <select [(ngModel)]="vez.nome" name="nome">
+                        <option value="{{produto.descricao}}" *ngFor="let produto of produtos">{{produto.descricao}}</option>
+                      </select>
+                    </div>
+                    <div class="col-5">
+                      <label class="label-modal">Quantidade</label>
+                      <input [(ngModel)]="vez.quantidade" name="qtd" type="number" />
+                    </div>
+                    <div class="col-1">
+                      <a (click)="removerProduto(i)">X</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn-entrada" (click)="adicionarProduto()">Adicionar produto</button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-12">
-            <button class="btn-entrada" (click)="adicionarProduto()">Adicionar produto</button>
-          </div>
-        </div>
-      </div>
       <div class="modal-footer">
         <button type="button" (click)="cadastrarNota()" class="btn-entrada">Salvar</button>
       </div>

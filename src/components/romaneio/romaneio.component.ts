@@ -71,7 +71,7 @@ export class RomaneioComponent implements OnInit {
       }
       this.novoRomaneio.veiculo = this.romaneio.veiculo;
 
-      const $api = this.http.post(this.locator.services.Romaneios, { withCredentials: true });
+      const $api = this.http.post(this.locator.services.Romaneios, this.novoRomaneio, { withCredentials: true });
 
       $api.subscribe((result: any) => {
       });
