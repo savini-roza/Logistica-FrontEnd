@@ -70,7 +70,7 @@ export class NotaFiscalComponent implements OnInit {
 
     for (let i = 0; i < this.vezes.length; i++) {
       let a = new ProdutoNotaEnviarDto;
-      a.id = this.produtos.findIndex(s => s.descricao == this.vezes[i].nome) + 1;
+      a.idProduto = this.produtos.findIndex(s => s.descricao == this.vezes[i].nome) + 1;
       a.quantidade = this.vezes[i].quantidade;
       this.novaNota.produtos.push(a);
       this.novaNota.valor += this.vezes[i].valorUnitario * this.vezes[i].quantidade;
