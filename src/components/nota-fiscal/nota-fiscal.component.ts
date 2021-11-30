@@ -7,6 +7,9 @@ import { ProdutoDto } from '../../model/produto-dto';
 import { ProdutoNotaDto } from '../../model/produto-nota-dto';
 import { ProdutoNotaPK } from '../../model/produto-nota-pk';
 import { formatDate } from '@angular/common';
+import { ClienteDto } from '../../model/cliente-dto';
+import { NotaFiscalEnvioDto } from '../../model/nota-fiscal-envio-dto';
+import { ProdutoNotaEnviarDto } from '../../model/produto-nota-enviar-dto';
 
 @Component({
   selector: 'app-nota-fiscal',
@@ -23,11 +26,12 @@ export class NotaFiscalComponent implements OnInit {
   public volumes: number = 0;
   public produtosNota: Array<ProdutoNotaPK> = [];
   public produtos: Array<ProdutoDto> = [];
-  public produtosNaNota: Array<ProdutoDto> = [];
-  public produtoNotaAColocar: ProdutoNotaDto = new ProdutoNotaDto;
   public produtoSelecionado: ProdutoDto = new ProdutoDto;
+  public produtoNotaAColocar: ProdutoNotaDto = new ProdutoNotaDto;
   public vezes: Array<ProdutoNotaDto> = [];
-  public novaNota: NotaFiscalDto = new NotaFiscalDto;
+  public novaNota: NotaFiscalEnvioDto = new NotaFiscalEnvioDto;
+  public clientes: Array<ClienteDto> = [];
+  public clienteSelecionado: string = "";
 
   ngOnInit(): void {
     this.vezes = [new ProdutoNotaDto];
@@ -42,6 +46,12 @@ export class NotaFiscalComponent implements OnInit {
     $api2.subscribe((result: any) => {
       this.produtos = result;
     });
+
+    const $api3 = this.http.get(this.locator.services.Cliente, { withCredentials: true });
+
+    $api3.subscribe((result: any) => {
+      this.clientes = result;
+    });
   }
 
   adicionarProduto() {
@@ -53,11 +63,19 @@ export class NotaFiscalComponent implements OnInit {
   }
 
   cadastrarNota() {
-    this.novaNota.produtos = this.vezes;
     this.novaNota.moeda = "REAL";
+    this.novaNota.clienteId = this.clientes.find(s => s.nome == this.clienteSelecionado)?.id!;
     let now = new Date;
-    this.novaNota.dtEmissao = formatDate(now, 'dd-MM-yyyyThh:mm:ss.0000-03:00', 'en-US');
-    this.novaNota.dtVencimento = formatDate(now.getDate() + 30, 'dd-MM-yyyyThh:mm:ss.0000-03:00', 'en-US');
+    this.novaNota.dtVencimento = formatDate(now, 'yyyy-MM-ddThh:mm:ss.0000-03:00', 'en-US');
+
+    for (let i = 0; i < this.vezes.length; i++) {
+      let a = new ProdutoNotaEnviarDto;
+      a.id = this.vezes[i].id;
+      a.quantidade = this.vezes[i].quantidade;
+      this.novaNota.produtos.push(a);
+      this.novaNota.valor += this.vezes[i].valorUnitario * this.vezes[i].quantidade;
+    }
+
     const headers = new HttpHeaders({
     'Content-Type': 'application/json'})
 
@@ -82,7 +100,6 @@ export class NotaFiscalComponent implements OnInit {
           this.volumes = this.volumes + this.notaSelecionada.produtos[i].quantidade;
           this.produtosNota[i] = new ProdutoNotaPK;
           this.produtosNota[i].produtoNota = this.notaSelecionada.produtos[i];
-          this.produtoSelecionado = new ProdutoDto;
           this.produtosNota[i].produto = this.produtos.find(s => s.descricao === this.notaSelecionada.produtos[i].nome)!;
         }
       });
