@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotaFiscalDto } from '../../model/nota-fiscal-dto';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LocatorService } from '../../services/locator.service';
 import { AlertService } from '../../services/alert.service';
 import { ProdutoDto } from '../../model/produto-dto';
@@ -58,8 +58,10 @@ export class NotaFiscalComponent implements OnInit {
     let now = new Date;
     this.novaNota.dtEmissao = formatDate(now, 'dd-MM-yyyyThh:mm:ss.0000-03:00', 'en-US');
     this.novaNota.dtVencimento = formatDate(now.getDate() + 30, 'dd-MM-yyyyThh:mm:ss.0000-03:00', 'en-US');
+    const headers = new HttpHeaders({
+    'Content-Type': 'application/json'})
 
-    const $api = this.http.post<NotaFiscalDto>(this.locator.services.Notas, this.novaNota);
+    const $api = this.http.post<NotaFiscalDto>(this.locator.services.Notas, this.novaNota,{headers});
 
     $api.subscribe((result: any) => {
     });

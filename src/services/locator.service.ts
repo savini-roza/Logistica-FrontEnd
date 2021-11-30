@@ -10,7 +10,7 @@ export class LocatorService {
 
   constructor() {
 
-    this.urlBase = "http://localhost:8080/";
+    this.urlBase = "/api/";
 
     this.services.LiberarVeiculo = this.urlBase + "veiculos/${veiculoId}/liberar";
     this.services.Veiculos = this.urlBase + "veiculos";
