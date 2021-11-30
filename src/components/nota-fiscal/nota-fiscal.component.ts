@@ -79,7 +79,7 @@ export class NotaFiscalComponent implements OnInit {
     const headers = new HttpHeaders({
     'Content-Type': 'application/json'})
 
-    const $api = this.http.post<NotaFiscalDto>(this.locator.services.Notas, this.novaNota,{headers});
+    const $api = this.http.post<NotaFiscalDto>(this.locator.services.Notas, this.novaNota);
 
     $api.subscribe((result: any) => {
     });
